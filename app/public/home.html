@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hot Restaurant</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9963e93bef.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <div class="main-content">
+        <h1 class="header"><i class="fas fa-fire"></i>Hot Restaurant</h1>
+
+        <h3 class="header">We only have <span id="tables-left">5</span> tables left!
+            Book your seat before they are all gone!</h3>
+        <div class="buttons">
+            <a href="#modal1" id="tables-submit" class="waves-effect waves-light btn-large modal-trigger"><i class="fas fa-table"></i>View
+                Tables</a>
+            <a href="#modal2" class="waves-effect waves-light btn-large modal-trigger"><i
+                    class="far fa-address-card"></i>Make Reservation</a>
+        </div>
+    </div>
+
+    <!-- Tables Modal -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Tables</h4>
+            <div class="current-res">
+                <div class="res-header">
+                    <h6>Current Reservations</h6>
+                </div>
+                <div class="res-body">
+
+                </div>
+            </div>
+            <div class="wait-list">
+                <div class="res-header">
+                    <h6>Wait List</h6>
+                </div>
+                <div class="waitlist-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <!-- Reservation Modal -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h4>Make a Reservation</h4>
+            <div class="inputs">
+                <div class="input-field">
+                    <input id="first-name" type="text" class="validate">
+                    <label for="first-name">Name</label>
+                </div>
+
+
+                <div class="input-field">
+                    <input id="phone" type="tel" class="validate">
+                    <label for="phone">Phone Number</label>
+                </div>
+
+
+                <div class="input-field">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="modal-footer">
+                    <a href="#" id="reserve-submit" class="waves-effect waves-light btn-large modal-close"><i
+                        class="far fa-address-card"></i>Reserve</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.modal').modal();
+            });
+        </script>
+</body>
+
+</html>
