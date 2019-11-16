@@ -1,0 +1,53 @@
+.main-content {
+    margin: 0 auto;
+    background-color: #ee6e73;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-direction: column;
+    height: 520px;
+    margin-top: 75px;
+}
+
+.header {
+    text-align: center;
+    margin: 50px;
+}
+
+.fa-fire {
+    color: #FFFFFF;
+}
+
+.fa-table,
+.fa-address-card {
+    margin-right: 7px;
+}
+
+.btn-large {
+    margin: 0 20px;
+}
+
+.inputs {
+    margin-top: 20px;
+}
+
+.current-res,
+.wait-list {
+    border: 1px solid gray;
+}
+
+.res-header {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #26a69a;
+    padding: 7px 15px;
+    border-bottom: 1px solid transparent;
+    position: relative;
+    top: -1px;
+}
+
+.res-body,
+.waitlist-body {
+    padding: 15px;
+}
