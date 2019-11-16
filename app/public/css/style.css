@@ -24,9 +24,6 @@
     margin-right: 7px;
 }
 
-.btn-large {
-    margin: 0 20px;
-}
 
 .inputs {
     margin-top: 20px;
@@ -35,6 +32,7 @@
 .current-res,
 .wait-list {
     border: 1px solid gray;
+    margin-top: 15px;
 }
 
 .res-header {

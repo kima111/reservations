@@ -27,6 +27,8 @@
                 Tables</a>
             <a href="#modal2" class="waves-effect waves-light btn-large modal-trigger"><i
                     class="far fa-address-card"></i>Make Reservation</a>
+            <a id="text" class="waves-effect waves-light btn-large"><i
+                    class="far fa-address-card"></i>Send a Text</a>
         </div>
     </div>
 
@@ -134,6 +136,12 @@
                         return data;
                     });
                 });
+
+                $("#text").on("click", () => {
+                    $.get("/api/text", (data) => {
+                        console.log("Request sent");
+                    })
+                })
             });
         </script>
 </body>
