@@ -1,0 +1,23 @@
+<script type="text/javascript">
+  $("#reserve-submit").on("click", function (event) {
+    event.preventDefault();
+    var customer = {
+      routeName: $("#name").val().trim(),
+      name: $("#name").val().trim(),
+      number: $("#name").val().trim(),
+      email: $("#name").val().trim(),
+    };
+    $.post("/api/tables", customerr)
+      .then(function (data) {
+        alert("Adding reservation ...");
+      });
+  });
+
+  $("#tables-submit").on("click", function () {
+    $.get("/api/tables", function (data) {
+      for (var i = 0; i < data.length; i++) {
+        return data.json(customers[i]);
+      }
+    });
+  });
+</script>
