@@ -1,4 +1,4 @@
 ## Reservations App - Saturday class activity 11/16/2019
 
-Basic function
-Text Messageing function
+- Basic function
+- Text Messageing function
