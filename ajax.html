@@ -2,10 +2,9 @@
   $("#reserve-submit").on("click", function (event) {
     event.preventDefault();
     var customer = {
-      routeName: $("#name").val().trim(),
-      name: $("#name").val().trim(),
-      number: $("#name").val().trim(),
-      email: $("#name").val().trim(),
+      name: $("#first-name").val().trim(),
+      number: $("#phone").val().trim(),
+      email: $("#email").val().trim(),
     };
     $.post("/api/tables", customerr)
       .then(function (data) {
