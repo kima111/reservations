@@ -22,7 +22,8 @@
         <h3 class="header">We only have <span id="tables-left">5</span> tables left!
             Book your seat before they are all gone!</h3>
         <div class="buttons">
-            <a href="#modal1" id="tables-submit" class="waves-effect waves-light btn-large modal-trigger"><i class="fas fa-table"></i>View
+            <a href="#modal1" id="tables-submit" class="waves-effect waves-light btn-large modal-trigger"><i
+                    class="fas fa-table"></i>View
                 Tables</a>
             <a href="#modal2" class="waves-effect waves-light btn-large modal-trigger"><i
                     class="far fa-address-card"></i>Make Reservation</a>
@@ -78,8 +79,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <a href="#" id="reserve-submit" class="waves-effect waves-light btn-large modal-close"><i
-                        class="far fa-address-card"></i>Reserve</a>
+                    <a id="reserve-submit" class="waves-effect waves-light btn-large modal-close"><i
+                            class="far fa-address-card"></i>Reserve</a>
                 </div>
             </div>
         </div>
@@ -88,9 +89,51 @@
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script>
+        <script type="">
             $(document).ready(function () {
                 $('.modal').modal();
+
+                $("#reserve-submit").on("click", function (event) {
+                    event.preventDefault();
+                    var newCustomer = {
+                        name: $("#first-name").val().trim(),
+                        number: $("#phone").val().trim(),
+                        email: $("#email").val().trim(),
+                    };
+                    $.post("/api/tables", newCustomer)
+                        .then(function (data) {
+                            console.log("Successful addition");
+                            $("#first-name").val("");
+                            $("#phone").val("");
+                            $("#email").val("");
+                        });
+                });
+
+                $("#tables-submit").on("click", function () {
+                    $.get("/api/tables", function (data) {
+                        let resNum = 1;
+                        $(".res-body").empty();
+                        $(".waitlist-body").empty();
+                        console.log(data);
+                        data.forEach(reservation => {
+                            let newRes = $("<div>").addClass("reservation"),
+                                resNumDiv = $("<div>").append(resNum),
+                                resName = $("<div>").append(reservation.name),
+                                resPhone = $("<div>").append(reservation.number),
+                                resEmail = $("<div>").append(reservation.email);
+
+                            newRes.append(resNumDiv, resName, resPhone, resEmail, $("<hr>"));
+                            console.log(newRes);
+                            if (resNum <= 5) {
+                                $(".res-body").append(newRes);
+                            } else {
+                                $(".waitlist-body").append(newRes);
+                            }
+                            resNum++;
+                        })
+                        return data;
+                    });
+                });
             });
         </script>
 </body>
